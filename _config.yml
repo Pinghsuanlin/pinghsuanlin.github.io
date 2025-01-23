@@ -1,6 +1,7 @@
-title: "Sherie's Blog"
+title: "Sherie's Portfolio"
 author: "Sherie Lin"
-description: "Taiwanese, US-based Data Scientist <b style=\"color: #f45;\">&lt;3</b>"
+description: "Portfolio of Sherie - Data Scientist specializing in renewable energy, big data and analyticcs. <b style=\"color: #f45;\">&lt;3</b>"
+keywords: "data scientist, clean energy, analytics, time series, big data, cloud computing, Python, PowerBI, R, Tableau"
 permalink: /:title/
 lang: "en"
 excerpt_separator: "\n\n\n"
