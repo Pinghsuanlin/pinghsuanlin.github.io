@@ -3,7 +3,13 @@
   <nav>
   {%- for item in site.navigation -%} <!--the loop dynamically generate navigation links for each item-->
     <li {% if item.file == page.url %}class="selected"{% endif %}>
-    {%- assign node = site.pages | where: "name", item.file | first -%}
+    <!--This works only for internal page{%- assign node = site.pages | where: "name", item.file | first -%}-->
+    {%- if item.file contains ".pdf -"} <!--Check if the file is url, if True, assigned to url-->
+      {%- assign url = item.file -%}
+    {%- else -%}
+      {%- assign node = site.pages | where: "name", item.file | first -%}
+      {%- assign url = item.url | default: node.url -%}
+    {%- endif -%}
     {%- assign url = item.url | default: node.url -%}
     {%- assign title = item.title | default: node.title -%}
     {%- assign icon = item.icon | default: item.sidebaricon -%}
