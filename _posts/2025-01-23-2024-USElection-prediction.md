@@ -1,9 +1,24 @@
 ---
-title:  "如何用台灣駕照免試換照（美國）"
+title: "2024 US Presidential Election Prediction"
 mathjax: true
 layout: post
 categories: [blogging, media]
 ---
+<h2>Project Description</h2>
+<p>
+- Goals: Used 2020 past election result with most recent state-by-state polling data to predict Harris or Trump who has higher probability winning the 2024 US election.
+- Approaches: I used Bayesian methodology with baseline uncertainty to predict the elction result. Web scraping and regex techniques were also used to access past 2020 election and most recent state-by-state polling data.
+- Tools/ Technologies used: Python `re`, `pandas`, `numpy`, `matplotlib`, `seaborn`, `bs4.BeautifulSoup`, `requests`
+- Results:
+  
+</p>
+
+<h3>Links</h3>
+<ul>
+  <li><a href="https://github.com/Pinghsuanlin/DS_sideProjects/tree/main/statisticalAnalysis" target="_blank">GitHub Repository</a></li>
+</ul>
+
+
 
 ## Blockquotes
 
