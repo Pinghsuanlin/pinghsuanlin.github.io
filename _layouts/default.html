@@ -32,7 +32,35 @@
   {% include menu.html menu=pages %}
 </header>
 
-{{ content }}
+<main>
+  {% if paginator %}
+    <!-- Render posts when pagination is enabled -->
+    <section>
+      <h1>{{ site.title }}</h1>
+      <p>{{ site.description }}</p>
+      {% for post in paginator.posts %}
+        <article>
+          <h2><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h2>
+          <p>{{ post.excerpt }}</p>
+        </article>
+      {% endfor %}
+
+      <!-- Pagination Navigation -->
+      <nav class="pagination">
+        {% if paginator.previous_page %}
+          <a href="{{ paginator.previous_page_path | relative_url }}">Previous</a>
+        {% endif %}
+        {% if paginator.next_page %}
+          <a href="{{ paginator.next_page_path | relative_url }}">Next</a>
+        {% endif %}
+      </nav>
+    </section>
+  {% else %}
+    <!-- Render content when not paginating -->
+    {{ content }}
+  {% endif %}
+</main>
+
 
 {% if site.external %}
 <footer>
