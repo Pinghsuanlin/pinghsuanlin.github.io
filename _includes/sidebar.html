@@ -3,7 +3,7 @@
   <nav>
   {%- for item in site.navigation -%} <!--the loop dynamically generate navigation links for each item-->
     <li {% if item.file == page.url %}class="selected"{% endif %}>
-      {%- if item.file contains ".pdf -"} <!--Check if the file is url, if True, assigned to url-->
+      {%- if item.file contains ".pdf" or item.title == "Resume"-%} <!--Check if the file is url, if True, assigned to url-->
         {%- assign url = item.file -%}
       {%- else -%}
         {%- assign node = site.pages | where: "name", item.file | first -%}
@@ -13,7 +13,7 @@
       {%- assign icon = item.icon | default: item.sidebaricon -%}
       <a aria-label="{{ title }}" href="{{ url | relative_url }}" 
         {% if url == page.url %}class="selected"{% endif %}
-        {% if item.file contains ".pdf" or item.title == "MyGitHub" %}target="_blank"{% endif %}>
+        {% if item.file contains ".pdf" or item.title == "Resume" %}target="_blank"{% endif %}>
         <!--Open in a new tab if it's a PDF or "MyGitHub"-->
         <svg aria-hidden="true" class="icon">
           <use xlink:href="{{ "/assets/fontawesome/icons.svg" | relative_url }}#{{ icon }}"></use>
