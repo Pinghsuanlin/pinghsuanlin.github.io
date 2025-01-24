@@ -17,7 +17,7 @@ minimal: false             # use a dark header
 # Menu
 
 navigation:                # accepts {file, title, url, icon, sidebaricon} I added title and icon
-  - {file: "/", title: "Home", icon: home} #index.html
+  - {file: "index.html", title: "Home", icon: home} 
   - {file: "/assets/resume/resume.pdf", title: "Resume", icon: address-card}
   - {title: "My GitHub", file: "https://github.com/Pinghsuanlin"}
   - {file: "blog.md", title: "Blog"}
