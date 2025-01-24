@@ -1,5 +1,5 @@
 ---
-title: ""
+title: "Time Series Stock Forecasting Models"
 layout: post
 date: 2024-07-23
 ---
