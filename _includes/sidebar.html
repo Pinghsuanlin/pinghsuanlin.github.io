@@ -3,28 +3,36 @@
   <nav>
   {%- for item in site.navigation -%} <!--the loop dynamically generate navigation links for each item-->
     <li {% if item.file == page.url %}class="selected"{% endif %}>
-    <!--This works only for internal page{%- assign node = site.pages | where: "name", item.file | first -%}-->
-    {%- if item.file contains ".pdf -"} <!--Check if the file is url, if True, assigned to url-->
-      {%- assign url = item.file -%}
-    {%- else -%}
-      {%- assign node = site.pages | where: "name", item.file | first -%}
-      {%- assign url = item.url | default: node.url -%}
-    {%- endif -%}
-    {%- assign url = item.url | default: node.url -%}
-    {%- assign title = item.title | default: node.title -%}
-    {%- assign icon = item.icon | default: item.sidebaricon -%}
-    <a aria-label="{{ title }}" href="{{ url | relative_url }}" {% if url == page.url %}class="selected"{% endif %}> <!--This line ensure current page is highlighted in the naviation bar-->
-      <svg aria-hidden="true" class="icon"><use xlink:href="{{ "/assets/fontawesome/icons.svg" | relative_url }}#{{ icon }}"></use></svg>
-      <span aria-hidden="true">{{ title }}</span>
-    </a>
+      {%- if item.file contains ".pdf -"} <!--Check if the file is url, if True, assigned to url-->
+        {%- assign url = item.file -%}
+      {%- else -%}
+        {%- assign node = site.pages | where: "name", item.file | first -%}
+        {%- assign url = item.url | default: node.url -%}
+      {%- endif -%}
+      {%- assign title = item.title | default: node.title -%}
+      {%- assign icon = item.icon | default: item.sidebaricon -%}
+      <a aria-label="{{ title }}" href="{{ url | relative_url }}" 
+        {% if url == page.url %}class="selected"{% endif %}
+        {% if item.file contains ".pdf" or item.title == "MyGitHub" %}target="_blank"{% endif %}>
+        <!--Open in a new tab if it's a PDF or "MyGitHub"-->
+        <svg aria-hidden="true" class="icon">
+          <use xlink:href="{{ "/assets/fontawesome/icons.svg" | relative_url }}#{{ icon }}"></use>
+        </svg>
+        <span aria-hidden="true">{{ title }}</span>
+      </a>
+    </li>
   {%- endfor -%}
-  {%- for item in site.external -%}
+    
+  {%- for item in site.external -%} <!--external links loop-->
     {%- assign node = site.pages | where: "name", item.file | first -%}
     {%- assign url = item.url | default: node.url -%}
     {%- assign title = item.title | default: node.title -%}
     {%- assign icon = item.icon | default: item.sidebaricon -%}
-    <a aria-label="{{ title }}" href="{{ url | relative_url }}" {% if url == page.url %}class="selected"{% endif %}>
-      <svg aria-hidden="true" class="icon"><use xlink:href="{{ "/assets/fontawesome/icons.svg" | relative_url }}#{{ icon }}"></use></svg>
+    <a aria-label="{{ title }}" href="{{ url | relative_url }}" target="blank">
+      <!--Ensure all external links open in a new tab-->
+      <svg aria-hidden="true" class="icon">
+        <use xlink:href="{{ "/assets/fontawesome/icons.svg" | relative_url }}#{{ icon }}"></use>
+      </svg>
       <span aria-hidden="true">{{ title }}</span>
     </a>
   {%- endfor -%}
