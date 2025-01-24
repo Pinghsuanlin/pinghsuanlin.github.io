@@ -7,10 +7,10 @@ categories: [blogging, media]
 
 <h2>Project Description</h2>
 <p>
-- **Goals**: Used 2020 past election result with most recent state-by-state polling data to predict Harris or Trump who has higher probability winning the 2024 US election.<br>
-- **Approaches**: I used Bayesian methodology with baseline uncertainty to predict the elction result. Web scraping and regex techniques were also used to access past 2020 election and most recent state-by-state polling data.<br>
-- **Tools/ Technologies used**: Python `re`, `pandas`, `numpy`, `matplotlib`, `seaborn`, `bs4.BeautifulSoup`, `requests`
-- **Results**:
+- Goals: Used 2020 past election result with most recent state-by-state polling data to predict Harris or Trump who has higher probability winning the 2024 US election.<br>
+- Approaches: I used Bayesian methodology with baseline uncertainty to predict the elction result. Web scraping and regex techniques were also used to access past 2020 election and most recent state-by-state polling data.<br>
+- Tools/ Technologies used: Python re, pandas, numpy, matplotlib, seaborn, bs4.BeautifulSoup, requests
+- esults:
   
 </p>
 
