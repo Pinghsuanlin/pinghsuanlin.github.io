@@ -6,6 +6,8 @@ permalink: /:title/
 lang: "en"
 excerpt_separator: "\n\n\n"
 date_format: "%B %d, %Y"
+baseurl: ""
+url:"https://pinghsuanlin.github.io"
 
 # Layout
 
@@ -17,7 +19,7 @@ minimal: false             # use a dark header
 # Menu
 
 navigation:                # accepts {file, title, url, icon, sidebaricon} I added title and icon
-  - {file: "index.html", title: "Home", icon: home} 
+  - {file: "/index.html", title: "Home", icon: home} 
   - {file: "/assets/resume/resume.pdf", title: "Resume", icon: address-card}
   - {title: "My GitHub", file: "https://github.com/Pinghsuanlin"}
   - {file: "blog.md", title: "Blog"}
