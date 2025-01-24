@@ -23,3 +23,8 @@
     {% endif %}
   </footer>
 {% endif %}
+
+<pre>
+  Paginator: {{ paginator | jsonify }}
+  Site Posts: {{ site.posts | jsonify }}
+</pre>
